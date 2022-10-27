@@ -1,0 +1,106 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    overflow: hidden;
+
+    .slider {
+        @media (max-width: $screen-pad) {
+            :global {
+                .swiper-button-prev,
+                .swiper-button-next {
+                    display: none;
+                }
+            }
+        }
+        @media (min-width: calc(#{$screen-pad} + 1px)) {
+            :global {
+                .swiper-button-prev,
+                .swiper-button-next {
+                    position: absolute;
+                    top: calc(50% - 20px);
+                    z-index: 2;
+                    width: 40px;
+                    height: 40px;
+                    background: #fff url('~@images/arrowDown.svg') center center no-repeat;
+                    border-radius: 50%;
+                    border: 2px solid #ECEBEB;
+                    cursor: pointer;
+        
+                    &.swiper-button-disabled {
+                        opacity: 0.6;
+                    }
+                }
+                .swiper-button-prev {
+                    left: 0;
+                    transform: rotate(90deg);
+                }
+                .swiper-button-next {
+                    right: 0;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+
+    & > .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        & > * {
+            flex: 0 1 auto;
+        }
+
+        & > div {
+            user-select: none; 
+            overflow: hidden;
+
+            .page {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & > img {
+                    flex: 0 1 auto;
+                }
+
+                width: 60px;
+                height: 60px;
+                border: 2px solid transparent;
+                border-radius: 8px;
+                cursor: pointer;
+                overflow: hidden;
+
+                &.active {
+                    border-color: #003C7E;
+                }
+
+                & > img {
+                    width: 60px;
+                }
+            }
+        }
+
+        & > ul {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px -2px;
+            & > * {
+                flex: 1 1 auto;
+                margin: 0 2px;
+            }
+
+            width: 100%;
+            list-style: none;
+            padding: 0;
+
+            & > li {
+                height: 2px;
+                background-color: #ECEBEB;
+                cursor: pointer;
+
+                &.active {
+                    background-color: #63636C;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "APP": {
+        "APP__STATE": {
+            "levels": {
+                "current": [],
+                "currentLevel": {
+                    "code": "catalog",
+                    "index": 0
+                },
+                "levelsData": {
+                    "end": {
+                        "code": "cart",
+                        "name": "Купить",
+                        "position": "end"
+                    },
+                    "start": {
+                        "code": "catalog",
+                        "link": "/",
+                        "name": "Модель",
+                        "position": "start"
+                    }
+                }
+            },
+            "modals": {
+                "oneClick": {
+                    "isShow": false
+                }
+            }
+        },
+        "APP__TYPE": {
+            "APP__CHANGE_LEVEL": "APP__CHANGE_LEVEL",
+            "APP__CHANGE_LEVELS": "APP__CHANGE_LEVELS",
+            "APP__SHOW_MODAL_ONE_CLICK": "APP__SHOW_MODAL_ONE_CLICK"
+        }
+    },
+    "PAGES": {
+        "PAGES__STATE": {
+            "product": {
+                "filters": {
+                    "applied": {},
+                    "future": {}
+                }
+            }
+        },
+        "PAGES__TYPE": {
+            "PAGES__PRODUCT__SET_APPLIED_FILTERS": "PAGES__PRODUCT__SET_APPLIED_FILTERS",
+            "PAGES__PRODUCT__RESET_FUTURE_FILTERS": "PAGES__PRODUCT__RESET_FUTURE_FILTERS",
+            "PAGES__PRODUCT__SET_FILTER": "PAGES__PRODUCT__SET_FILTER"
+        }
+    },
+    "RPC_INITIALSTATE": { "request": null, "response": null, "status": 0, "done": 0, "error": null },
+    "RPC_CITIES": "RPC_CITIES",
+    "RPC_CITYID": "RPC_CITYID",
+    "RPC_COOKIE": "RPC_COOKIE",
+    "RPC_FILTER": "RPC_FILTER",
+    "RPC_FORMCODE": "RPC_FORMCODE",
+    "RPC_LOCATION": "RPC_LOCATION",
+    "RPC_MODELCODE": "RPC_MODELCODE",
+    "RPC_MODELS": "RPC_MODELS",
+    "RPC_SORT": "RPC_SORT"
+}

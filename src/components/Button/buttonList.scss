@@ -1,0 +1,39 @@
+@import "~@styles/breakpoint.sass";
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        flex: 0 1 auto;
+        &:last-child {
+            margin-left: 8px;
+        }
+    }
+
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    transition: 
+        background-color .15s;
+    @media (max-width: $screen-note) {
+    cursor: pointer;
+        &:hover {
+            background-color: rgba(#146cc9, .1);
+            border-color: #146cc9;
+        }
+        &.show > img {
+            transform: rotate(180deg);
+        }
+        & > img {
+            transition: 
+                transform .1s;
+        }
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) {
+        & > img {
+            display: none !important;
+        }
+    }
+    
+}

@@ -1,0 +1,54 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    @media (max-width: $screen-note) {
+        position: relative;
+        left: 0vw;
+        width: 100vw;
+        min-height: 100vh;
+        padding: 0 16px;
+        background-color: #fff;
+        transition: 
+            left .2s;
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) {
+        position: relative;
+        width: 80vw;
+        margin: 5vw auto;
+        padding: 0 16px;
+        background-color: #fff;
+        border-radius: 8px;
+    }
+    
+
+    & > .close {
+        position: absolute;
+        top: 16px;
+        background-color: transparent;
+        border: 0;
+        padding: 8px;
+        cursor: pointer;
+        @media (max-width: $screen-note) {
+            left: 8px;
+
+            & > img {
+                margin-right: 6px;
+            }
+            & > span {
+                color: #003C7E;
+            }
+        }
+        @media (min-width: calc(#{$screen-note} + 1px)) {
+            right: 16px;
+        }
+    }
+
+    & > .children {
+        @media (max-width: $screen-note) {
+            margin-top: 60px;
+        }
+        @media (min-width: calc(#{$screen-note} + 1px)) {
+            margin-top: 48px;
+        }
+    }
+}

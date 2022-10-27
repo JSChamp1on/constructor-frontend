@@ -1,0 +1,50 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    & > .filter {
+        display: flex;
+        margin: 24px -4px;
+        & > * {
+            flex: 0 1 auto;
+            margin: 0 4px;
+        }
+    }
+    
+    & > .previewOfOptions {
+        display: flex;
+        flex-flow: column nowrap;
+        & > * {
+            flex: 0 1 auto;
+            margin: 0 0 24px 0;
+        }
+    }
+
+    &__descriptionBlock {
+        background: #EAF6FF;
+        border-radius: 6px;
+        display: flex;
+        margin-bottom: 16px;
+        padding: 10px;
+
+        @media (max-width: $screen-mobile) {
+            margin-bottom: 26px;
+        }
+    }
+
+    &__descriptionIcon {
+        height: 24px;
+        width: 24px;
+    }
+
+    &__descriptionText {
+        color: #1A1A1A;
+        font-size: 16px;
+        line-height: 24px;
+        margin-left: 10px;
+
+        @media (max-width: $screen-mobile) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

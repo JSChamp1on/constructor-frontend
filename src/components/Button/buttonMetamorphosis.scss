@@ -1,0 +1,42 @@
+@import "~@styles/breakpoint.sass";
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        flex: 0 1 auto;
+        &:last-child {
+            margin-left: 8px;
+        }
+    }
+
+    cursor: pointer;
+    transition: 
+        background-color .15s,
+        border .15s;
+    @media (max-width: $screen-board) {
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+    }
+    @media (min-width: calc(#{$screen-board} + 1px)) {
+        height: 48px;
+        border: 1px solid #D9D8D8;
+        border-radius: 8px;
+        padding: 0 12px 0 20px;
+        background-color: #FFF;
+    }
+    &:hover {
+        background-color: rgba(#146cc9, .1);
+        border-color: #146cc9;
+    }
+    &.show > img {
+        transform: rotate(180deg);
+    }
+
+    & > img {
+        transition: 
+            transform .1s;
+    }
+}

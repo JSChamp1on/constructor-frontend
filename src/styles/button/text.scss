@@ -1,0 +1,11 @@
+.text {
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

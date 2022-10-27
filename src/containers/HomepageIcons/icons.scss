@@ -1,0 +1,84 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    margin-bottom: 25px;
+
+    .item {
+        & > div {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            & > * {
+                flex: 0 1 auto;
+            }
+
+            & > .primitive {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & > * {
+                    flex: 0 1 auto;
+                }
+                
+                border: 1px solid transparent;
+                border-radius: 50%;
+                margin-bottom: 8px;
+                @media (max-width: $screen-mobile) {
+                    width: 20.80vw;
+                    height: 20.80vw;
+                }
+                @media (min-width: calc(#{$screen-mobile} + 1px)) and (max-width: $screen-note) {
+                    width: 13.57vw;
+                    height: 13.57vw;
+                }
+                @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad) {
+                    width: 10.16vw;
+                    height: 10.16vw;
+                }
+                @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board) {
+                    width: 7.86vw;
+                    height: 7.86vw;
+                }
+                @media (min-width: calc(#{$screen-board} + 1px)) and (max-width: $screen-uxga) {
+                    width: 90px;
+                    height: 90px;
+                }
+                @media (min-width: calc(#{$screen-uxga} + 1px)) {
+                    width: 112px;
+                    height: 112px;
+                }
+            }
+            & > .primitive {
+                cursor: pointer;
+
+                @media (min-width: calc(#{$screen-pad} + 1px)) {
+                    svg path {
+                        stroke: #000;
+                    }
+
+                    &:hover {
+                        border-color: #8AB1E3;
+
+                        svg path {
+                            stroke: #8AB1E3;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > .active {
+            & > .primitive {
+                border-color: #003C7E;
+
+                svg path {
+                    stroke: #003C7E;
+                }
+            }
+
+            span {
+                color: #003C7E;
+            }
+        }
+    }
+}

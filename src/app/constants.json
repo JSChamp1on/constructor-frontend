@@ -1,0 +1,31 @@
+{
+    "PAGES": {
+        "HOMEPAGE": {
+            "PATH": "/",
+            "LABEL": "Домой",
+            "TITLE": "Конструктор диванов"
+        },
+        "PRODUCT_CARD": {
+            "PATH": "/productcard/:product",
+            "LABEL": "Карточка товара",
+            "TITLE": "Карточка товара"
+        },
+        "CART": {
+            "PATH": "/cart",
+            "LABEL": "Корзина товаров",
+            "TITLE": "Корзина товаров"
+        }
+    },
+    "QUERY": {
+        "FILTER": "filter",
+        "PRODUCT_ID": "productId",
+        "VALUES": "values"
+    },
+    "TABS": {
+        "CODES": {
+            "CORNER": "corner",
+            "LEGS": "legs",
+            "UPHOLSTERY": "obivka"
+        }
+    }
+}

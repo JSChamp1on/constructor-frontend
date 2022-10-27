@@ -1,0 +1,9 @@
+.wrapper {
+    :global {
+        .slick-track {
+            & > .slick-slide:not(.slick-active) {
+                opacity: 0;
+            }
+        }
+    }
+}

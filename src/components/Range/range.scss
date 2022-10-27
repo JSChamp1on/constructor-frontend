@@ -1,0 +1,32 @@
+.wrapper {
+    position: relative;
+    height: 23px;
+    margin: 0 11.5px 0 11.5px;
+
+    :global {
+        .rc-slider-rail {
+            position: absolute;
+            top: 10px;
+            left: -11.5px;
+            right: -11.5px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #ccc;
+        }
+        .rc-slider-track {
+            position: absolute;
+            top: 10px;
+            height: 4px;
+            background-color: #003C7E;
+        }
+        .rc-slider-handle {
+            position: absolute;
+            top: 0;
+            width: 23px;
+            height: 23px;
+            background-color: #fff;
+            border: 2px solid #63636C;
+            border-radius: 50%;
+        }
+    }
+}

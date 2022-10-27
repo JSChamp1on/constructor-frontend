@@ -1,0 +1,18 @@
+.wrapper {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    & > div {
+        position: absolute;
+        top: 1px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: #FFF;
+        transition: 
+            left .05s;
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "constructor",
+  "version": "0.1",
+  "description": "development",
+  "main": "",
+  "bin": {
+    "entry": "src/app/entry.js"
+  },
+  "scripts": {
+    "dev": "NODE_ENV='development' API_LINK='https://constructor.lazurit.com' webpack serve --mode='development' --hot --config webpack/webpack.config.js",
+    "build": "NODE_ENV='production' API_LINK='' BASE_PATH='' webpack --mode='production' --config webpack/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ksokolin/constructor-frontend.git"
+  },
+  "author": "Dmitrii Zaytsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/ksokolin/constructor-frontend/issues"
+  },
+  "homepage": "https://bitbucket.org/ksokolin/constructor-frontend#readme",
+  "dependencies": {
+    "intl-tel-input": "^17.0.16",
+    "rc-slider": "^10.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.31.3",
+    "react-redux": "^7.2.6",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
+    "react-slick": "^0.28.1",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^8.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "node-sass-json-importer": "^4.3.0",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

@@ -1,0 +1,49 @@
+.appliedFiltersDesktop {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__closeButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 8px;
+        outline: none;
+        padding: 0;
+    }
+
+    &__closeButtonIcon {
+        height: 11px;
+        width: 11px;
+    }
+
+    &__item {
+        align-items: center;
+        background: #FFFFFF;
+        border: 1px solid #D9D8D8;
+        border-radius: 30px;
+        color: #000;
+        display: flex;
+        padding: 4px 20px;
+    }
+
+    &__itemContainer {
+        margin: 12px 12px 0 0;
+    }
+
+    &__itemText {
+        font-size: 16px;
+        line-height: 160%;
+    }
+
+    &__resetButton {
+        background: none;
+        border: none;
+        color: #003C7E;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 200%;
+        outline: none;
+        padding: 0;
+        text-decoration-line: underline;
+    }
+}

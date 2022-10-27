@@ -1,0 +1,37 @@
+@import "~@styles/breakpoint.sass"
+
+@mixin font-size($sizePX, $sizeVw)
+    @media (max-width: $screen-mobile)
+        font-size: $sizePX
+    
+    @media (min-width: calc(#{$screen-mobile} + 1px)) and (max-width: $screen-note)
+        font-size: calc($sizeVw * 2.6)
+    
+    @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad)
+        font-size: calc($sizeVw * 1.9)
+    
+    @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board)
+        font-size: calc($sizeVw * 1.6)
+    
+    @media (min-width: calc(#{$screen-board} + 1px)) and (max-width: $screen-uxga)
+        font-size: calc($sizeVw * 1.2)
+    
+    @media (min-width: calc(#{$screen-uxga} + 1px)) and (max-width: $screen-fhd)
+        font-size: $sizeVw
+    
+    @media (min-width: calc(#{$screen-fhd} + 1px))
+        font-size: $sizePX
+
+h1
+    $sizePX: 30px
+    $sizeVw: 1.56vw
+
+    @include font-size($sizePX, $sizeVw)
+    font-weight: 700
+
+h2
+    $sizePX: 28px
+    $sizeVw: 1.46vw
+
+    @include font-size($sizePX, $sizeVw)
+    font-weight: 500

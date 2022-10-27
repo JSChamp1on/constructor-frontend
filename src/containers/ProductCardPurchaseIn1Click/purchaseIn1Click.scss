@@ -1,0 +1,43 @@
+@import "~@styles/breakpoint.sass";
+
+.areaForm {
+    @media (min-width: $screen-note) and (max-width: $screen-board) {
+        width: 80vw;
+    }
+    @media (min-width: calc(#{$screen-board} + 1px)) {
+        width: 800px;
+    }
+}
+.areaMessage {
+    @media (min-width: $screen-note) and (max-width: $screen-pad) {
+        width: 80vw;
+    }
+    @media (min-width: calc(#{$screen-pad} + 1px)) {
+        width: 656px;
+    }
+}
+
+.wrapperForm {
+    display: flex;
+    flex-flow: column nowrap;
+    & > * {
+        flex: 0 1 auto;
+        // margin: 0 54px;
+    }
+
+    padding-bottom: 24px;
+
+    h1 {
+        margin: 0 0 24px 0;
+    }
+
+    & > p {
+        display: block;
+        margin-top: 6px;
+        text-align: center;
+        color: #726E75;
+        a {
+            color: #003C7E;
+        }
+    }
+}

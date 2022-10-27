@@ -1,0 +1,36 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        flex: 0 1 auto;
+    }
+
+    position: relative;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 8px;
+
+    @media (max-width: $screen-note) {
+        width: 336px;
+        height: 232px;
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) {
+        width: 560px;
+        height: 232px;
+    }
+
+    & > h1 {
+        margin: 0;
+    }
+
+    & > .confirm {
+        & > button {
+            width: 250px;
+        }
+    }
+}

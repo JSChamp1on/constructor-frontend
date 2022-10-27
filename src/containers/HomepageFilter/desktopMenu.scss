@@ -1,0 +1,70 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    & > * {
+        flex: 0 1 auto;
+    }
+
+    margin-bottom: 14px;
+
+    & > .form {
+        display: flex;
+        margin: 0 -4px;
+        & > * {
+            flex: 0 1 auto;
+            margin: 0 4px;
+        }
+    }
+
+    & > .formPrice {
+        margin-left: 8px;
+    }
+}
+
+ul.filterParams {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -6px 34px -6px;
+    & > li {
+        flex: 0 1 auto;
+        margin: 6px;
+    }
+
+    padding: 0;
+    list-style: none;
+
+    & > li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > * {
+            flex: 0 1 auto;
+        }
+        
+        height: 34px;
+    }
+    & > li:not(.clearFilter) {
+        border: 1px solid #D9D8D8;
+        border-radius: 17px;
+        padding: 0 19px;
+
+        & > button {
+            height: 14px;
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+    & > li.clearFilter {
+        & > button {
+            background-color: transparent;
+            border: 0;
+            color: #003C7E;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

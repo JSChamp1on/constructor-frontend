@@ -1,0 +1,9 @@
+.wrapper {
+    display: flex;
+    margin: 24px -4px 0 -4px;
+
+    & > * {
+        flex: 0 1 auto;
+        margin: 0 4px;
+    }
+}

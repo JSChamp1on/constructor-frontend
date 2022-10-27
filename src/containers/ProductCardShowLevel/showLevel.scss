@@ -1,0 +1,134 @@
+.wrapper {
+    transition: 
+        height .1s;
+
+    & > .fullWidth {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, .1);
+            z-index: -1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFF;
+            z-index: -1;
+        }
+
+        .fixed {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & > * {
+                &:nth-child(odd) {
+                    flex: 0 1 auto;
+                }
+                &:nth-child(even) {
+                    flex: 1 1 auto;
+                }
+                margin: 0 2px;
+            }
+            
+            padding-top: 40px;
+
+            & > hr {
+                width: 100%;
+                height: 3px;
+                border: 0;
+                border-radius: 1.5px;
+                background-color: #C4C4C4;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0%;
+                    height: 3px;
+                    background-color: #003C7E;
+                }
+                &.active::after {
+                    width: 100%;
+                }
+            }
+
+            & > div {
+                position: relative;
+                text-align: center;
+
+                &:not(.active) > .levelNumb {
+                    background-color: #C4C4C4;
+                }
+                &.active > .levelNumb {
+                    background-color: #003C7E;
+                }
+
+                .levelName {
+                    position: absolute;
+                    top: -24px;
+                }
+
+                & > .levelNumb {
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    width: 24px;
+                    height: 24px;
+                    border: 0;
+                    border-radius: 50%;
+                    padding: 0;
+                    color: #FFF;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .miniSofa {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            grid-template-rows: min-content min-content;
+            grid-auto-columns: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "img name"
+                "img price";
+            & > .img { grid-area: img; }
+            & > .name { grid-area: name; }
+            & > .price { grid-area: price; }
+
+            margin-top: 20px;
+
+            & > .img {
+                display: flex;
+                align-items: center;
+                & > * {
+                    flex: 0 1 auto;
+                }
+            }
+            & > .name {
+                h3 {
+                    margin: 0;
+                }
+            }
+            & > .price {
+                & > .discount {
+                    margin-right: 8px;
+                }
+                & > .common {
+                    text-decoration: line-through;
+                    color: #63636C;
+                }
+            }
+        }
+    }
+}

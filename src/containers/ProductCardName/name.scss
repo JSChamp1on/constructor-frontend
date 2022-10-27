@@ -1,0 +1,90 @@
+@import "~@styles/breakpoint.sass";
+
+@mixin lineHeight36($sizePx, $sizeVw) {
+    @media (max-width: $screen-mobile) {
+        line-height: calc($sizeVw * 4.1);
+    }
+    
+    @media (min-width: calc(#{$screen-mobile} + 1px)) and (max-width: $screen-note) {
+        line-height: calc($sizeVw * 2.6);
+    }
+    
+    @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad) {
+        line-height: calc($sizeVw * 1.9);
+    }
+    
+    @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board) {
+        line-height: calc($sizeVw * 1.6);
+    }
+    
+    @media (min-width: calc(#{$screen-board} + 1px)) and (max-width: 1390px) {
+        line-height: calc($sizeVw * 1.3);
+    }
+
+    @media (min-width: 1391px) and (max-width: $screen-uxga) {
+        line-height: calc($sizeVw * 1.14);
+    }
+    
+    @media (min-width: calc(#{$screen-uxga} + 1px)) and (max-width: $screen-fhd) {
+        line-height: $sizeVw;
+    }
+    
+    @media (min-width: calc(#{$screen-fhd} + 1px)) {
+        line-height: $sizePx;
+    }
+}
+    
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        flex: 0 1 auto;
+    }
+
+    @media (max-width: $screen-note) {
+        & > h1 {
+            margin: 0;
+        }
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) {
+        margin: 16px 0;
+    }
+    
+    .button {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        &:not(:hover) {
+            border-color: #ECEBEB;
+        }
+    }
+
+    & > .price {
+        display: flex;
+        align-items: flex-end;
+        margin: 0 -8px;
+        & > * {
+            flex: 0 1 auto;
+            margin: 0 8px;
+        }
+
+        & > span:nth-child(2) {
+            text-decoration: line-through;
+            color: #63636C;
+        }
+        & > span:nth-child(3) {
+            color: #C4113F;
+        }
+
+        .lineHeight {
+            @media (max-width: $screen-pad) {
+                line-height: 34px;
+            }
+            @media (min-width: calc(#{$screen-pad} + 1px)) {
+                line-height: 32px;
+            }
+        }
+    }
+}

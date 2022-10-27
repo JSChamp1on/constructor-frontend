@@ -1,0 +1,78 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        flex: 0 1 auto;
+    }
+    
+    @media (max-width: $screen-board) {
+        width: 82px;
+        height: 24px;
+    }
+    @media (min-width: calc(#{$screen-board} + 1px)) {
+        width: 150px;
+        height: 50px;
+        padding: 20px;
+        border: 2px solid #ECEBEB;
+        border-radius: 8px;
+    }
+
+    & > * {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    & > label > input {
+        color: #34423E;
+        text-align: center;
+        border: 0;
+        outline: 0;
+        @media (max-width: $screen-board) {
+            width: 30px;
+        }
+        @media (min-width: calc(#{$screen-board} + 1px)) {
+            width: 50px;
+        }
+    }
+    & > button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > {
+            flex: 0 1 auto;
+        }
+
+        border: 0;
+        color: #003C7E;
+        @media (max-width: $screen-board) {
+            width: 24px;
+            height: 24px;
+            background-color: #C7C7CC;
+            border-radius: 2px;
+
+            & > svg {
+                rect {
+                    fill: #FFF;
+                }
+            }
+        }
+        @media (min-width: calc(#{$screen-board} + 1px)) {
+            height: 18px;
+        }
+        
+        &:not(:disabled) > svg {
+            cursor: pointer;
+        }
+        &:disabled > svg {
+            @media (max-width: $screen-board) {
+                opacity: .6;
+            }
+            @media (min-width: calc(#{$screen-board} + 1px)) {
+                opacity: .2;
+            }
+        }
+    }
+}

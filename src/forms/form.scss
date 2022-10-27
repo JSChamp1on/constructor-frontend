@@ -1,0 +1,16 @@
+.form {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: -6px 0;
+    & > * {
+        flex: 0 1 auto;
+        margin: 6px 0;
+        &.submit {
+            margin-top: 26px;
+        }
+    }
+
+    & > .submit > span {
+        color: #fff;
+    }
+}

@@ -1,0 +1,103 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    @media (max-width: $screen-note),
+    (min-width: calc(#{$screen-board} + 1px)) and (max-width: $screen-uxga) {
+        display: flex;
+        flex-flow: column nowrap;
+        & > * {
+            flex: 0 1 auto;
+        }
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-board),
+    (min-width: calc(#{$screen-uxga} + 1px)) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        & > * {
+            &.materialName {
+                flex: 0 1 200px;
+            }
+            &.materialSamples {
+                flex: 0 1 auto;
+                width: calc(100% - 240px);
+            }
+        }
+    }
+    
+    & > .material {
+        span {
+            &.newPrice {
+                font-weight: 600;
+            }
+            &.greyOldPrice {
+                text-decoration: line-through;
+                color: #63636C;
+            }
+        }
+
+        @media (max-width: $screen-note) {
+            display: none;
+        }
+    }
+    & > .materialSamples {
+        .dragging {
+            display: flex;
+            margin: 0 -4px;
+            & > * {
+                flex: 0 1 auto;
+                margin: 0 4px;
+            }
+
+            & > .item {
+                background: none;
+                border: none;
+                cursor: pointer;
+                display: block;
+                outline: none;
+                padding: 0;
+                text-align: center;
+                width: 100px;
+
+                .img {
+                    display: block;
+                    width: 100%;
+                    height: 100px;
+                    border-radius: 8px;
+                    border: 2px solid #DADADA;
+                }
+
+                .title {
+                    color: #666666;
+                    display: flex;
+                    font-size: 14px;
+                    justify-content: center;
+                    line-height: 24px;
+                }
+
+                &.isSelected {
+                    .img {
+                        position: relative;
+                        border-color: #003C7E;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -6px;
+                            right: -2px;
+                            width: 22px;
+                            height: 22px;
+                            background: #003C7E url('~@images/mark.svg') center center no-repeat;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .title {
+                        color: #003C7E;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

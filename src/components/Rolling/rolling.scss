@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    & > * {
+        flex: 0 1 auto;
+    }
+
+    & > *:nth-child(1) {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    & > *:nth-child(n+2) {
+        width: calc(50% - 4px);
+    }
+
+    .err {
+        color: #e00;
+    }
+}

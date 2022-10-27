@@ -1,0 +1,49 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.panel{
+    display: flex;
+    flex-flow: column nowrap;
+    & > * {
+        &:not(.context) {
+            flex: 0 1 auto;
+        }
+        &.context {
+            flex: 1 1 auto;
+        }
+        & + * {
+            margin-top: 12px;
+        }
+    }
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px 8px 0 0;
+    background-color: #fff;
+    padding: 8px 16px 16px 16px;
+
+    & > .hr {
+        width: 64px;
+        height: 5px;
+        border: 0;
+        border-radius: 2.5px;
+        background-color: #D8D8D8;
+    }
+    & > .button {
+        width: 100%;
+
+        & > span {
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import "~@styles/scroll.sass";
+
+.wrapper {
+    & > .contour {
+        background-color: #FFF;
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        
+        &.hidden {
+            height: 0px;
+        }
+
+        & > .content {
+            overflow: auto;
+            padding: 10px;
+            @include scroll();
+        }
+    }
+}

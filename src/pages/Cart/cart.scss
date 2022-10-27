@@ -1,0 +1,76 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    background-color: #F4F4F6;
+
+    .container {
+        @media (max-width: $screen-pad) {
+            display: grid; 
+            grid-auto-columns: 1fr; 
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content; 
+            gap: 0px  0px; 
+            grid-template-areas: 
+                "base"
+                "content"
+                "totalAmount"; 
+        }
+        @media (min-width: calc(#{$screen-pad} + 1px)) {
+            display: grid; 
+            grid-auto-columns: 1fr; 
+            @media (max-width: $screen-uxga) {
+                grid-template-columns: 1fr 280px;
+            }
+            @media (min-width: calc(#{$screen-uxga} + 1px)) {
+                grid-template-columns: 1fr 360px;
+            }
+            grid-template-rows: min-content min-content; 
+            gap: 0px 5.05vw; 
+            grid-template-areas: 
+                "base ."
+                "content totalAmount"; 
+        }
+        & > .base { grid-area: base; }
+        & > .content { grid-area: content; }
+        & > .totalAmount { grid-area: totalAmount; }
+
+        width: 100%; 
+
+        & > .base {
+            h1 {
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            .base {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 -10px;
+                & > * {
+                    &:nth-child(1) {
+                        flex: 1 1 auto;
+                    }
+                    &:nth-child(n+2) {
+                        flex: 0 1 auto;
+                    }
+                    margin: 0 10px;
+                }
+
+                height: 24px;
+
+                .favorit {
+                    color: #003C7E;
+                }
+                .delete {
+                    color: #A30317;
+                }
+            }
+        }
+        & > .content {}
+    }
+
+    
+    
+}
+

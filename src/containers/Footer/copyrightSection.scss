@@ -1,0 +1,48 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    & > .flexbox {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 -0.83vw;
+        & > * {
+            flex: 0 1 auto;
+            margin: 12px 0.83vw;
+        }
+
+        & > .linePay {
+            display: flex;
+            align-items: center;
+            & > * {
+                flex: 0 1 auto;
+                & + * {
+                    margin-left: 1.25vw;
+                }
+            }
+        }
+
+        & > .lineSocial {
+            display: flex;
+            align-items: center;
+            & > * {
+                flex: 0 1 auto;
+                & + * {
+                    margin-left: 0.42vw;
+                }
+            }
+        }
+        
+        & > .copyright {
+            width: 100%;
+        }
+    }
+    
+    a {
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

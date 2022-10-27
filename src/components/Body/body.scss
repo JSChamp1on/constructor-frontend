@@ -1,0 +1,16 @@
+.wrapper {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: min-content 1fr min-content; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "head"
+        "main"
+        "foot";
+
+    & > header { grid-area: head; }
+    & > main { grid-area: main; }
+    & > footer { grid-area: foot; }
+
+    height: 100%;
+}

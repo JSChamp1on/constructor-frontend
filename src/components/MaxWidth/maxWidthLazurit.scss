@@ -1,0 +1,15 @@
+@import "~@styles/breakpoint.sass";
+
+.width {
+    width: 93.8vw;
+    margin: 0 auto;
+    @media (max-width: $screen-mobile) {
+        width: 90vw;
+    }
+    @media (min-width: calc(#{$screen-mobile} + 1px)) and (max-width: $screen-note) {
+        width: calc(100vw - 60px);
+    }
+    @media (min-width: 2400px) {
+        width: 2222px;
+    }
+}

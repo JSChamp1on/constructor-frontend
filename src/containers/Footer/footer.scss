@@ -1,0 +1,24 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    & > * {
+        flex: 0 1 auto;
+    }
+
+    padding-top: 120px;
+
+    @media (max-width: $screen-note) {
+        & > *:nth-child(-n+2) {
+            display: none;
+        }
+        
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) {
+        & > *:nth-child(3) {
+            display: none;
+        }
+    }
+    
+}

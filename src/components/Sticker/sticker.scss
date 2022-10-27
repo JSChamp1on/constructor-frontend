@@ -1,0 +1,11 @@
+.wrapper {
+    & > .area {
+        background-color: #FFF;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 28px;
+    }
+    & > span + .area {
+        margin-top: 16px;
+    }
+}

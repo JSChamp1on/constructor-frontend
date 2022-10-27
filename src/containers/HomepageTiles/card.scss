@@ -1,0 +1,109 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    $padding: 12px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    & > *:not(:last-child) {
+        flex: 1 1 auto;
+    }
+    & > *:last-child {
+        flex: 0 1 auto;
+    }
+
+    position: relative;
+    border: 1px solid #ECEBEB;
+    border-radius: 8px;
+    padding: $padding;
+    overflow: hidden;
+    &:hover {
+        border-color: #003C7E;
+    }
+
+    img.cursorPointer {
+        cursor: pointer;
+    }
+
+    & > div {
+        & > .heading {
+            display: block;
+            margin-top: 24px;
+            font-weight: 400;
+        }
+        & > .margins {
+            margin-top: 10px;
+            margin-bottom: 16px;
+
+            & > .amountMargin {
+                @media (min-width: calc(#{$screen-mobile} + 1px)) {
+                    margin-left: 6px;
+                }
+            }
+            & > .amountRed {
+                color: #C4113F;
+            }
+            & > .saleGrey {
+                text-decoration: line-through;
+                color: #63636C;
+                @media (max-width: $screen-mobile) {
+                    &::before {
+                        content: '\A';
+                        white-space: pre;
+                    }
+                }
+            }
+        }
+        & > .grey {
+            line-height: 24px;
+            @media (max-width: $screen-mobile) {
+                color: #858585;
+            }
+            @media (min-width: calc(#{$screen-mobile} + 1px)) {
+                color: #63636C;
+            }
+        }
+        & > .darkGrey {
+            line-height: 24px;
+            @media (max-width: $screen-mobile) {
+                color: #4D4D4D;
+    
+                &::before {
+                    content: '\A';
+                    white-space: pre;
+                }
+            }
+            @media (min-width: calc(#{$screen-mobile} + 1px)) {
+                color: #63636C;
+            }
+        }
+        & > .darkGrey + .grey {
+            &::before {
+                content: '\A';
+                white-space: pre;
+            }
+        }
+    }
+    @media (max-width: $screen-board) {
+        & > div > .button {
+            width: 100%;
+            margin-top: 24px;
+        }
+    }
+    @media (min-width: calc(#{$screen-board} + 1px)) {
+        & > div > .button {
+            position: absolute;
+            left: $padding;
+            bottom: -50px;
+            width: calc(100% - ($padding * 2));
+            transition: 
+                background-color 0.15s,
+                border 0.15s,
+                bottom .05s;
+        }
+        &:hover > div > .button {
+            bottom: $padding;
+        }
+    }
+}

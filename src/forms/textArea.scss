@@ -1,0 +1,78 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    $textFieldHeight: 54px;
+
+    position: relative;
+    min-height: calc(#{$textFieldHeight} + 15px);
+
+    &.invalid {
+        & > textarea {
+            border: 1px solid #C4113F;
+        }
+        & > label {
+            color: #C4113F;
+        }
+        & > span {
+            display: block;
+            color: #C4113F;
+        }
+    }
+
+    & > textarea {
+        position: relative;
+        width: 100%;
+        min-height: $textFieldHeight;
+        max-height: calc(#{$textFieldHeight} * 4);
+        background-color: #fff;
+        border: 1px solid #AEAEB2;
+        border-radius: 6px;
+        font-size: 16px;
+        padding: 24px 10px 0 10px;
+        resize: vertical;
+        @media (max-width: $screen-pad) {
+            height: calc(#{$textFieldHeight} * 2);
+        }
+        @media (min-width: calc(#{$screen-pad} + 1px)) {
+            height: $textFieldHeight;
+        }
+        
+        &:focus {
+            outline: 0;
+        }
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 27px #fff inset !important;
+        }
+
+        & + label {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 16px;
+            color: #63636C;
+            line-height: $textFieldHeight;
+            transition: 
+                line-height .15s ease .15s,
+                font-size .15s,
+                color .15s,
+                top .15s ease .15s,
+                left .15s;
+        }
+        &:focus + label,
+        &.filled + label {
+            top: -12px;
+            left: 10px;
+            font-size: 12px;
+            transition: 
+                top .15s,
+                left .15s ease .10s;
+        }
+    }
+
+    & > span {
+        display: none;
+        height: 11px;
+        margin-top: 4px;
+        font-size: 11px;
+    }
+}

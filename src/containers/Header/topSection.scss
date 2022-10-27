@@ -1,0 +1,99 @@
+@import "~@styles/breakpoint.sass";
+
+.modal {
+    padding: 16px;
+
+    & > ul {
+        list-style: none;
+        padding: 0;
+
+        @media (max-width: $screen-mobile) {
+            column-count: 1;
+        }
+        @media (min-width: calc(#{$screen-mobile} + 1px)) and (max-width: $screen-note) {
+            column-count: 2;
+        }
+        @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad) {
+            column-count: 3;
+        }
+        @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board) {
+            column-count: 4;
+        }
+        @media (min-width: calc(#{$screen-board} + 1px)) and (max-width: $screen-uxga) {
+            column-count: 5;
+        }
+        @media (min-width: calc(#{$screen-uxga} + 1px)) and (max-width: $screen-fhd) {
+            column-count: 6;
+        }
+        @media (min-width: calc(#{$screen-fhd} + 1px)) {
+            column-count: 7;
+        }
+
+        & > li {
+            width: 175px;
+            margin: 3px;
+
+            &:nth-child(-n+2) {
+                & > button {
+                    color: #003C7E;
+                }
+            }
+
+            &.beforeLetter {
+                &::after {
+                    content: '\A\A';
+                    white-space: pre;
+                }
+                & + li {
+                    & > button:first-letter {
+                        color: #003C7E;
+                    }
+                }
+            }
+
+            button {
+                text-align: left;
+                white-space: normal;
+            }
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        flex: 0 1 auto;
+    }
+
+    height: 80px;
+
+    & > .menu {
+        display: flex;
+        margin: 0 -1.15vw;
+        & > * {
+            flex: 0 1 auto;
+            margin: 0 1.15vw;
+        }
+
+        & > div {
+            & > span {
+                color: #003C7E;
+
+                &:hover:not(.notUnderline) {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+                & > .triangle {
+                    margin-left: 6px;
+                    margin-bottom: 2px;
+                }
+            }
+            & > a {
+                color: #003C7E;
+            }
+        }
+    }
+}

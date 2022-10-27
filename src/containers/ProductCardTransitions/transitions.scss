@@ -1,0 +1,136 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapperMobile {
+    .flex {
+        @media (max-width: $screen-mobile) {
+            display: flex;
+            margin: 0 -8px;
+            & > * {
+                &:nth-child(1) {
+                    flex: 0 1 133px;
+                }
+                &:nth-child(2) {
+                    flex: 1 1 auto;
+                }
+                margin: 0 8px;
+            }
+        }
+        @media (min-width: calc(#{$screen-mobile} + 1px)) {
+            display: flex;
+            margin: 0 -8px;
+            & > * {
+                flex: 0 1 auto;
+                margin: 0 8px;
+            }
+        }
+        
+        & > .priceButton {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & > * {
+                flex: 0 1 auto;
+            }
+
+            width: 165px;
+
+            span {
+                display: block;
+                color: #FFF;
+                text-align: right;
+
+                &.bigSize {
+                    font-size: 14px;
+                }
+                &.smallSize {
+                    font-size: 12px;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+}
+
+.wrapperMobileFixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: #fff;
+    transition: 
+        bottom .15s linear;
+}
+.wrapperMobileFixed_up {
+    bottom: 56px;
+}
+.wrapperMobileFixed_down {
+    bottom: 0px;
+}
+
+.wrapperDesktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+        &:nth-child(1) {
+            flex: 0 1 auto;
+        }
+        &:nth-child(n+2) {
+            flex: 0 1 calc(50% - 30px);
+        }
+    }
+
+    .button {
+        color: #221924;
+
+        &:not(:hover) {
+            border-color: #ECEBEB;
+        }
+
+        &.copy {
+            width: 44px;
+            height: 44px;
+            padding: 2px 0 0 0;
+        }
+    }
+}
+
+.tabs {
+    display: flex;
+    & > * {
+        flex: 0 1 auto;
+        & + * {
+            margin-left: 16px;
+        }
+    }
+
+    margin-top: 40px;
+    border-bottom: 1px solid #2B6BB0;
+
+    &_empty {
+        border: none;
+    }
+
+    & > button {
+        height: 42px;
+        background-color: #FFF;
+        border: 1px solid #2B6BB0;
+        border-bottom: 0;
+        border-radius: 8px 8px 0 0;
+        padding: 0 16px;
+        cursor: pointer;
+        transition: 
+            background-color .15s;
+
+        &:hover {
+            background-color: rgba(#146cc9, .1);
+        }
+
+        &.active {
+            background-color: #2B6BB0;
+            color: #FFF;
+        }
+    }
+}

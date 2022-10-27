@@ -1,0 +1,38 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    & > * {
+        flex: 0 1 auto;
+    }
+
+    margin-bottom: 32px;
+
+    & > button {
+        display: flex;
+        align-items: center;
+        & > * {
+            flex: 0 1 auto;
+        }
+
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        float: right;
+        &:hover {
+            background-color: rgba(#146cc9, .1);
+        }
+    }
+}
+
+.sizeBlock {
+    margin-bottom: 20px;
+
+    & > span {
+        display: block;
+        margin-bottom: 8px;
+        color: #63636C;
+    }
+}

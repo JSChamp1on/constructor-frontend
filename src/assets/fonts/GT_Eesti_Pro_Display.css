@@ -1,0 +1,41 @@
+@font-face {
+    font-family: GT Eesti Pro Display;
+    font-style: normal;
+    font-weight: 100;
+    src: local('GT Eesti Pro Display'), url('~@assets/fonts/GT_Eesti_Pro_Display/gteestiprodisplay_thin.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: GT Eesti Pro Display;
+    font-style: normal;
+    font-weight: 300;
+    src: local('GT Eesti Pro Display'), url('~@assets/fonts/GT_Eesti_Pro_Display/gteestiprodisplay_light.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: GT Eesti Pro Display;
+    font-style: normal;
+    font-weight: 400;
+    src: local('GT Eesti Pro Display'), url('~@assets/fonts/GT_Eesti_Pro_Display/gteestiprodisplay_regular.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: GT Eesti Pro Display;
+    font-style: normal;
+    font-weight: 500;
+    src: local('GT Eesti Pro Display'), url('~@assets/fonts/GT_Eesti_Pro_Display/gteestiprodisplay_medium.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: GT Eesti Pro Display;
+    font-style: normal;
+    font-weight: 700;
+    src: local('GT Eesti Pro Display'), url('~@assets/fonts/GT_Eesti_Pro_Display/gteestiprodisplay_bold.otf') format('OpenType');
+}
+
+@font-face {
+    font-family: GT Eesti Pro Display;
+    font-style: normal;
+    font-weight: 800;
+    src: local('GT Eesti Pro Display'), url('~@assets/fonts/GT_Eesti_Pro_Display/gteestiprodisplay_ultrabold.otf') format('OpenType');
+}

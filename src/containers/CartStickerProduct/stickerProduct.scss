@@ -1,0 +1,190 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    @media (max-width: $screen-note) {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 100px 1fr; 
+        grid-template-rows: min-content min-content; 
+        gap: 0px 2.08vw; 
+        grid-template-areas: 
+            "sample price"
+            "sample content"; 
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad) {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 200px 1fr 120px; 
+        grid-template-rows: min-content; 
+        gap: 0px 2.08vw; 
+        grid-template-areas: 
+            "sample content price"; 
+    }
+    @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board) {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 200px 1fr; 
+        grid-template-rows: min-content min-content; 
+        gap: 0px 2.08vw; 
+        grid-template-areas: 
+            "sample price"
+            "sample content"; 
+    }
+    @media (min-width: calc(#{$screen-board} + 1px)) {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 200px 1fr 120px; 
+        grid-template-rows: min-content; 
+        gap: 0px 2.08vw; 
+        grid-template-areas: 
+            "sample content price"; 
+    }
+    
+    & > .price { grid-area: price; }
+    & > .sample { grid-area: sample; }
+    & > .content { grid-area: content; }
+
+    width: 100%;
+
+    .title {
+        @media (max-width: $screen-mobile) {
+            width: 170px;
+        }
+        @media (min-width: calc(#{$screen-mobile} + 1px)) and (max-width: $screen-note) {
+            width: 360px;
+        }
+        @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad) {
+            width: 240px;
+        }
+        @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board) {
+            width: 240px;
+        }
+        @media (min-width: calc(#{$screen-board} + 1px)) and (max-width: $screen-uxga) {
+            width: 240px;
+        }
+        @media (min-width: calc(#{$screen-uxga} + 1px)) and (max-width: $screen-fhd) {
+            width: 450px;
+        }
+        @media (min-width: $screen-fhd) {
+            width: 690px;
+        }
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-x: hidden;
+    }
+
+    .align {
+        display: flex;
+        align-items: center;
+        margin: 12px -4px;
+        & > * {
+            flex: 0 1 auto;
+            margin: 0 4px;
+        }
+
+        & > .entity {
+            color: #63636C;
+        }
+        & > .property {
+            padding: 0 16px;
+            line-height: 36px;
+            border: 1px solid #C4C4C4;
+            border-radius: 8px;
+        }
+    }
+
+    & > .sample {
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            background-color: grey;
+        }
+    }
+
+    & > .price {
+        @media (max-width: $screen-note) {
+            padding-bottom: 8px;
+
+            span:nth-child(1) {
+                color: #A30317;
+                
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 8px;
+                }
+            }
+        }
+        @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad) {
+            text-align: right;
+
+            span:nth-child(2)::before {
+                content: '\A';
+                white-space: pre;
+            }
+        }
+        @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board) {
+            padding-bottom: 8px;
+
+            span:nth-child(1) {
+                color: #A30317;
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 8px;
+                }
+            }
+        }
+        @media (min-width: calc(#{$screen-board} + 1px)) {
+            text-align: right;
+
+            span:nth-child(2)::before {
+                content: '\A';
+                white-space: pre;
+            }
+        }
+        
+        span:nth-child(2) {
+            color: #63636C;
+            text-decoration: line-through;
+        }
+
+        .buttons {
+            @media (max-width: $screen-note) {
+                float: right;
+            }
+            @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-pad) {
+                margin-top: 100px;
+            }
+            @media (min-width: calc(#{$screen-pad} + 1px)) and (max-width: $screen-board) {
+                float: right;
+            }
+            @media (min-width: calc(#{$screen-board} + 1px)) {
+                margin-top: 100px;
+            }
+            
+            & > .delete {
+                color: #003C7E;
+            }
+        }
+    }
+}
+
+.hr {
+    height: 1px;
+    background-color: #ECEBEB;
+    border: 0;
+    margin: 20px 0 13px 0;
+}
+
+.assembling {
+    display: flex;
+    align-items: center;
+    margin: 0 -10px;
+    & > * {
+        flex: 0 1 auto;
+        margin: 0 10px;
+    }
+}

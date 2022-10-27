@@ -1,0 +1,76 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    background-color: #F9F9F9;
+
+    & > menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        & > * {
+            flex: 0 1 auto;
+        }
+
+        padding: 0;
+
+        & > a {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            height: 45px;
+            & > * {
+                flex: 0 1 auto;
+            }
+
+            background-color: transparent;
+            padding: 0;
+            border: 0;
+            
+            &:active {
+                &:nth-child(-n+3) svg path {
+                    stroke: #003C7E;
+                }
+                &:nth-child(n+4) svg path {
+                    stroke: #003C7E;
+                    fill: #003C7E;
+                }
+                & > span {
+                    color: #003C7E;
+                }
+            }
+
+            
+            & > svg {
+                width: 25px;
+                height: 25px;
+            }
+            & > span {
+                @media (max-width: $screen-mobile) {
+                    font-size: 11px;
+                }
+                @media (min-width: calc(#{$screen-mobile} + 1px)) {
+                    font-size: 14px;
+                }
+            }
+        }
+        
+    }
+}
+
+.wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: 
+        bottom .15s linear;
+}
+.wrapper_up {
+    bottom: 0px;
+}
+.wrapper_down {
+    bottom: -56px;
+}

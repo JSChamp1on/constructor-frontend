@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px -4px 2px -4px;
+    & > * {
+        flex: 0 1 auto;
+        margin: 0 4px;
+    }
+
+    & > button {
+        display: flex;
+        align-items: center;
+        & > * {
+            flex: 0 1 auto;
+        }
+
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        float: right;
+        &:hover {
+            background-color: rgba(#146cc9, .1);
+        }
+    }
+
+    &__resetButton {
+        background: none;
+        border: none;
+        color: #003C7E;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 20px;
+        outline: none;
+        padding: 0;
+        text-decoration-line: underline;
+    }
+
+    &__resetButtonContainer {
+        text-align: right;
+    }
+}

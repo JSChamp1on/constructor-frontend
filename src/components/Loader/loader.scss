@@ -1,0 +1,49 @@
+@keyframes moveStart {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+@keyframes moveInfinite {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    margin-bottom: 8px;
+    overflow-x: hidden;
+    z-index: 10;
+
+    & > hr {
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        margin: 0;
+        border: 0;
+        background: linear-gradient(90deg, rgba(#003c7e, .1) 0%, rgba(#003c7e, 1) 50%, rgba(#003c7e, .1) 100%);
+        
+        &:nth-child(1) {
+            animation: moveStart 4s linear 0s 1 normal running forwards;
+        }
+        &:nth-child(2) {
+            animation: moveInfinite 6s linear 0s infinite normal running backwards;
+        }
+        &:nth-child(3) {
+            animation:  moveInfinite 6s linear 2s infinite normal running backwards;
+        }
+        &:nth-child(4) {
+            animation:  moveInfinite 6s linear 4s infinite normal running backwards;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "screen-mobile": 576,
+    "screen-note":   768,
+    "screen-pad":    992,
+    "screen-board":  1200,
+    "screen-uxga":   1580,
+    "screen-fhd":    1900
+}

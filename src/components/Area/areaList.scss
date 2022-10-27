@@ -1,0 +1,21 @@
+@import "~@styles/breakpoint.sass";
+@import "~@styles/scroll.sass";
+
+.wrapper {
+    & > .contour {
+        background-color: #FFF;
+        overflow: hidden;
+        
+        @media (max-width: $screen-note) {
+            &.hidden {
+                height: 30px;
+            }
+        }
+
+        & > .content {
+            overflow: auto;
+            padding: 4px 0 24px 0;
+            @include scroll();
+        }
+    }
+}

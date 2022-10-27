@@ -1,0 +1,32 @@
+@import "~@styles/breakpoint.sass";
+
+.container {
+    @media (max-width: $screen-board) {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 100%; 
+        grid-template-rows: min-content min-content min-content min-content min-content; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            "name"
+            "sliderProduct"
+            "sliderLevel"
+            "transitions";
+    }
+    @media (min-width: calc(#{$screen-board} + 1px)) {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 48% 50%; 
+        grid-template-rows: min-content min-content 1fr; 
+        gap: 0px 2vw; 
+        grid-template-areas: 
+            "sliderProduct name"
+            "sliderProduct transitions"
+            "sliderProduct sliderLevel";
+    }
+    
+    & > .name { grid-area: name; }
+    & > .sliderProduct { grid-area: sliderProduct; }
+    & > .sliderLevel { grid-area: sliderLevel; }
+    & > .transitions { grid-area: transitions; }
+}

@@ -1,0 +1,180 @@
+@import "~@styles/breakpoint.sass";
+
+.wrapper {
+    @media (max-width: $screen-note),
+    (min-width: calc(#{$screen-board} + 1px)) and (max-width: $screen-uxga) {
+        display: flex;
+        flex-flow: column nowrap;
+        & > * {
+            flex: 0 1 auto;
+        }
+    }
+    @media (min-width: calc(#{$screen-note} + 1px)) and (max-width: $screen-board),
+    (min-width: calc(#{$screen-uxga} + 1px)) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        & > * {
+            &.material {
+                flex: 0 1 calc(50% - 40px);
+            }
+            &.materialSamples {
+                flex: 0 1 50%;
+            }
+        }
+    }
+    
+    & > .material {
+        & >.frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & > * {
+                flex: 0 1 auto;
+            }
+            & + .frame {
+                margin-right: 8px;
+            }
+
+            width: 48px;
+            height: 30px;
+            background-color: #4BB34B;
+            border-radius: 8px 0;
+            float: right;
+        }
+
+        span {
+            &.pre {
+                &::before {
+                    content: '\A';
+                    white-space: pre;
+                }
+            }
+            &.greyOldPrice {
+                text-decoration: line-through;
+                color: #63636C;
+            }
+            &.grey {
+                color: #4D4D4D;
+            }
+        }
+    }
+    & > .materialSamples {
+        .flexNowrap {
+            .item {
+                background: none;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                padding: 0;
+                text-align: center;
+
+                & > .img {
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 8px;
+                    border: 2px solid #DADADA;
+
+                    &.isSelected {
+                        position: relative;
+                        border-color: #003C7E;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 6px;
+                            right: 6px;
+                            width: 22px;
+                            height: 22px;
+                            background: #003C7E url('~@images/mark.svg') center center no-repeat;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .flexWrap {
+            display: inline-flex;
+            flex-flow: row wrap;
+            margin: -6px;
+            & > * {
+                flex: 0 1 auto;
+                margin: 6px;
+            }
+
+            & > .item {
+                background: none;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                padding: 0;
+                text-align: center;
+
+                & > .img {
+                    display: block;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 8px;
+                    border: 2px solid #DADADA;
+
+                    &.isSelected {
+                        position: relative;
+                        border-color: #003C7E;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -6px;
+                            right: -2px;
+                            width: 22px;
+                            height: 22px;
+                            background: #003C7E url('~@images/mark.svg') center center no-repeat;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                .marginTop {
+                    display: block;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+}
+
+.tooltip {
+    width: 180px;
+    height: 140px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, .1);
+
+    @media (max-width: $screen-pad) {
+        display: none;
+    }
+    
+    & > .img {
+        width: 100%;
+        overflow: hidden;
+        width: 180px;
+        height: 100px;
+        img {
+            width: 100%;
+        }
+    }
+    & > .description {
+        width: 100%;
+        height: 40px;
+        padding: 0 4px;
+
+        span {
+            position: relative;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}

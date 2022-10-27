@@ -1,0 +1,16 @@
+.wrapper {
+    & > .previewOfOptions {
+        display: flex;
+        flex-flow: column nowrap;
+        & > * {
+            flex: 0 1 auto;
+            margin: 24px 0;
+        }
+
+        overflow: hidden;
+    }
+
+    &__appliedFiltersBlock {
+        margin-top: 4px;
+    }
+}

@@ -1,0 +1,7 @@
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    & > * {
+        flex: 0 1 auto;
+    }
+}
